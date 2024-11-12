@@ -1,0 +1,94 @@
+/* WordJumble.css */
+.game-container {
+  width: 80%;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.quote-container {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.word-bank {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.word-bank div {
+  display: inline-block;
+  margin: 5px;
+  border: 1px solid #ccc;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.word-bank div.selected {
+  background-color: #ddf;
+}
+
+#quote span {
+  display: inline-block;
+  margin: 5px;
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+#quote span.correct {
+  border-color: green;
+}
+
+#quote span.incorrect {
+  border-color: red;
+}
+
+#result {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+#score {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+/* ANIMATIONS */
+.word-bank-word.returned {
+  animation: return-to-bank 0.5s;
+}
+
+.floating-word {
+  position: absolute;
+  font-size: 1.2em;
+  transition: all 0.5s;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes float-to-quote {
+  0% {
+    top: var(--start-top);
+    left: var(--start-left);
+    opacity: 0.5;
+  }
+  100% {
+    top: var(--target-top);
+    left: var(--target-left);
+    opacity: 1;
+  }
+}
+
+@keyframes return-to-bank {
+  0% {
+    top: var(--start-top);
+    left: var(--start-left);
+    opacity: 1;
+  }
+  100% {
+    top: var(--target-top);
+    left: var(--target-left);
+    opacity: 0.5;
+  }
+}
